@@ -1,5 +1,3 @@
-
-
 --!strict
 
 export type RateLimitState = {
@@ -8,7 +6,7 @@ export type RateLimitState = {
 }
 
 export type RateLimit = {
-	sources: {[any]: RateLimitState},
+	sources: { [any]: RateLimitState },
 	rate: number,
 	rate_period: number,
 	is_full_wait: boolean,

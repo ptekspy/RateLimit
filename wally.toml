@@ -10,3 +10,4 @@ keywords = ["RateLimit", "Roblox"]
 files = ["src"]
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
+exclude = ["scripts"]

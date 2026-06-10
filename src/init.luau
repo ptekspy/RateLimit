@@ -30,7 +30,7 @@ MAD STUDIO
 
 local Players = game:GetService("Players")
 
-local Types = require(script.Parent.Types)
+local Types = require(script.Types)
 
 local PlayerReference = {} -- {player = true}
 local RateLimits = {} -- {rate_limit = true, ...}
@@ -40,7 +40,7 @@ local RateLimits = {} -- {rate_limit = true, ...}
 local RateLimit: Types.RateLimitModule = {}
 RateLimit.__index = RateLimit
 
-function RateLimit.New(rate : number, is_full_wait : boolean?) : Types.RateLimit
+function RateLimit.New(rate: number, is_full_wait: boolean?): Types.RateLimit
 	if rate <= 0 then
 		error("[RateLimit]: Invalid rate")
 	end
@@ -58,8 +58,7 @@ function RateLimit.New(rate : number, is_full_wait : boolean?) : Types.RateLimit
 	return self
 end
 
-function RateLimit:CheckRate(source: any) : boolean -- Whether event should be processed
-	
+function RateLimit:CheckRate(source: any): boolean -- Whether event should be processed
 	local sources = self.sources
 	local os_clock = os.clock()
 
@@ -84,8 +83,7 @@ function RateLimit:CheckRate(source: any) : boolean -- Whether event should be p
 		return false
 	else
 		-- Preventing from remembering players that already left:
-		if typeof(source) == "Instance" and source:IsA("Player")
-			and PlayerReference[source] == nil then
+		if typeof(source) == "Instance" and source:IsA("Player") and PlayerReference[source] == nil then
 			return false
 		end
 
