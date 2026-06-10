@@ -1,0 +1,9 @@
+{
+  "name": "RateLimit",
+  "tree": {
+    "$path": "src",
+    "DevPackages": {
+      "$path": "DevPackages"
+    }
+  }
+}
